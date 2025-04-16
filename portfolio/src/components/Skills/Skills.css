@@ -1,0 +1,135 @@
+  :root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --text-color: #333;
+  --light-text: #6c757d;
+  --bg-light: #f8f9fa;
+  --bg-dark: #212529;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.skills-container {
+  margin: 2rem 0;
+}
+
+.skill-card {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  overflow: hidden;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 0;
+  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+  transition: var(--transition);
+}
+
+.skill-card:hover::before {
+  height: 100%;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.skill-card .card-title {
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0;
+  transition: var(--transition);
+}
+
+.skill-card:hover .card-title {
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+
+.home-skills-title {
+  margin-top: -6rem;
+}
+
+.skills-page-title {
+  margin-top: -9rem;
+}
+
+.years-badge {
+  background-color: rgba(67, 97, 238, 0.1);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.skill-card:hover .years-badge {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.skill-progress {
+  margin-top: 1rem;
+}
+
+.proficiency-level {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.progress {
+  height: 0.75rem;
+  border-radius: 5px;
+  background-color: rgba(67, 97, 238, 0.1);
+  overflow: visible;
+}
+
+.progress-bar {
+  position: relative;
+  border-radius: 5px;
+  background: linear-gradient(to right, #4361ee, #4895ef) !important;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: inherit;
+  transform: scale(0);
+  transition: var(--transition);
+}
+
+.skill-card:hover .progress-bar::after {
+  transform: scale(1);
+}
+
+.error-message {
+  text-align: center;
+  color: #dc3545;
+  padding: 2rem;
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: var(--border-radius);
+}
+
